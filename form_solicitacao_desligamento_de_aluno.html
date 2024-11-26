@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Desligamento de Aluno</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link para Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link para Font Awesome -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="js/script_form_desligamento.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="text-white" style="background-color: #0963A2;">
+        <div class="container mx-auto flex justify-between items-center py-3">
+            <div>
+                <a href="https://www.sp.senai.br/">
+                    <img src="img/logo_branco.png" alt="Logo SENAI" class="h-10">
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="https://www.facebook.com/SENAISP" class="hover:opacity-75" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/senaisp" class="hover:opacity-75" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/senaisp/" class="hover:opacity-75" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/senai-sp/" class="hover:opacity-75" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container mx-auto p-6">
+        <h2 class="text-2xl font-bold mb-4 text-center">Solicitação de Desligamento de Aluno</h2>
+        <form id="formulario_professor" class="bg-white shadow-md rounded px-8 py-6 mb-4">
+            <h3 class="font-semibold text-lg mb-4">Dados do Professor</h3>
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+                <label for="nome_professor" class="block text-sm font-medium text-gray-700">Nome do Professor:</label>
+                <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md p-2" name="nome_professor"
+                    required>
+            </div>
+        </form>
+    </div>
+    <div class="container mx-auto p-6">
+
+        <form id="formulario" class="bg-white shadow-md rounded px-8 py-6 mb-4">
+            <h3 class="font-semibold text-lg mb-4">Dados do Aluno</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="nome_aluno" class="block text-sm font-medium text-gray-700">Nome do Aluno:</label>
+                    <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md p-2" name="nome_aluno"
+                        required>
+                </div>
+                <div>
+                    <label for="data_desistencia" class="block text-sm font-medium text-gray-700">Data da
+                        Desistência:</label>
+                    <input type="date" class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                        name="data_desistencia" required>
+                </div>
+                <div>
+                    <label for="data_ultima_frequencia" class="block text-sm font-medium text-gray-700">Data da Última
+                        Frequência:</label>
+                    <input type="date" class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                        name="data_ultima_frequencia" required>
+                </div>
+                <div>
+                    <label for="carga_horaria_cursada" class="block text-sm font-medium text-gray-700">Carga Horária
+                        Cursada:</label>
+                    <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                        name="carga_horaria_cursada" required>
+                </div>
+                <div>
+                    <label for="curso" class="block text-sm font-medium text-gray-700">Curso:</label>
+                    <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md p-2" name="curso"
+                        required>
+                </div>
+                <div>
+                    <label for="codigo_turma" class="block text-sm font-medium text-gray-700">Código da Turma:</label>
+                    <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                        name="codigo_turma" required>
+                </div>
+
+            </div>
+            <button type="button" class="mt-4 bg-gray-500 text-white font-bold py-2 px-4 rounded hover:bg-gray-600"
+                onclick="adicionarAluno()">Adicionar Aluno</button>
+                <button type="button" class="mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600"
+                onclick="visualizar()">Visualizar</button>
+    
+            <!-- Botão Enviar -->
+            <button type="button" class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600" onclick="abrirJanelaEmail()">Enviar por E-mail</button>
+        
+        </form>
+
+        <h3 class="font-semibold text-lg mb-4">Tabela de Alunos a Serem Desligados</h3>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded mb-4">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b border-gray-300 text-left" style="background-color: #0963A2; color: white;">#</th>
+                        <th class="py-2 px-4 border-b border-gray-300 text-left" style="background-color: #0963A2; color: white;">Nome do Aluno</th>
+                        <th class="py-2 px-4 border-b border-gray-300 text-auto" style="background-color: #0963A2; color: white;">Data da Desistência</th>
+                        <th class="py-2 px-4 border-b border-gray-300 text-auto" style="background-color: #0963A2; color: white;">Data da Última Frequência</th>
+                        <th class="py-2 px-4 border-b border-gray-300 text-left" style="background-color: #0963A2; color: white;">Carga Horária Cursada</th>
+                        <th class="py-2 px-4 border-b border-gray-300 text-left" style="background-color: #0963A2; color: white;">Curso</th>
+                        <th class="py-2 px-4 border-b border-gray-300 text-left" style="background-color: #0963A2; color: white;">Código da Turma</th>
+                        <th class="py-2 px-4 border-b border-gray-300 text-auto" style="background-color: #0963A2; color: white;">Ação</th>
+                    </tr>                    
+                </thead>
+                <tbody id="tabelaAlunos" class="text-center">
+                    <!-- Os dados dos alunos serão adicionados aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Cabeçalho -->
+    <header class="text-white" style="background-color: #0963A2;">
+        <div class="container mx-auto flex justify-between items-center py-3">
+            <div>
+                <a href="https://www.sp.senai.br/">
+                    <img src="img/logo_branco.png" alt="Logo SENAI" class="h-10">
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="https://www.facebook.com/SENAISP" class="hover:opacity-75" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/senaisp" class="hover:opacity-75" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/senaisp/" class="hover:opacity-75" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/senai-sp/" class="hover:opacity-75" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="flex container mx-auto p-6 space-x-6">
+        <!-- Menu Lateral -->
+        <nav class="w-64 bg-white p-4 shadow-md rounded-lg border border-gray-200">
+            <h2 class="text-lg font-bold mb-4 text-gray-700">Menu</h2>
+            <ul>
+                <li class="mb-3">
+                    <a href="form_solicitacao_desligamento_de_aluno.html" class="flex items-center text-gray-700 hover:underline">
+                        <i class="fas fa-user-slash mr-2"></i>Solicitação de Desligamento de Aluno
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="#" class="flex items-center text-gray-700 hover:underline">
+                        <i class="fas fa-clock mr-2"></i>Mudança de Horário de Trabalho
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="#" class="flex items-center text-gray-700 hover:underline">
+                        <i class="fas fa-print mr-2"></i>Solicitação de Repografia
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <div class="flex-1 bg-white p-6 shadow-md rounded-lg">
+            <h2 class="text-2xl font-bold mb-4 text-center text-gray-700">Bem-vindo ao Sistema de Solicitações</h2>
+            <p class="mb-4 text-gray-600">
+                Este sistema foi desenvolvido para facilitar a gestão de solicitações escolares, como mudanças de horários,
+                desligamentos e serviços de repografia. Utilize o menu lateral para navegar entre as opções disponíveis e iniciar
+                sua solicitação de forma rápida e prática.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Mudança de Horário</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+  <!-- Cabeçalho -->
+  <header class="bg-green-500 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-lg font-bold">Formulário de Mudança de Horário</h1>
+      <a href="https://www.sp.senai.br/">
+        <img src="img/logo.png" alt="Logo SENAI" class="h-10">
+      </a>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container mx-auto mt-6 p-4 bg-white rounded-lg shadow-md">
+    <form id="formularioMudancaHorario" class="space-y-4">
+      <div>
+        <label for="nomeColaborador" class="block text-sm font-bold text-gray-700">Nome do Colaborador:</label>
+        <input type="text" id="nomeColaborador" name="nomeColaborador" class="w-full border rounded-md p-2" required>
+      </div>
+      
+      <div>
+        <label for="nif" class="block text-sm font-bold text-gray-700">NIF:</label>
+        <input type="text" id="nif" name="nif" class="w-full border rounded-md p-2" required>
+      </div>
+
+      <div>
+        <label class="block text-sm font-bold text-gray-700">Período de Mudança:</label>
+        <div class="flex items-center space-x-4">
+          <div>
+            <input type="radio" id="aPartirDe" name="periodo" value="aPartirDe" required>
+            <label for="aPartirDe">A partir de:</label>
+            <input type="date" name="dataAPartirDe" class="border rounded-md p-2">
+          </div>
+          <div>
+            <input type="radio" id="somenteNoDia" name="periodo" value="somenteNoDia">
+            <label for="somenteNoDia">Somente no dia de:</label>
+            <input type="date" name="dataSomenteNoDia" class="border rounded-md p-2">
+          </div>
+          <div>
+            <input type="radio" id="intervalo" name="periodo" value="intervalo">
+            <label for="intervalo">No período de:</label>
+            <input type="date" name="dataInicio" class="border rounded-md p-2">
+            a
+            <input type="date" name="dataFim" class="border rounded-md p-2">
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-bold text-gray-700">Horários:</label>
+        <table class="table-auto w-full border-collapse border border-gray-300 text-sm">
+          <thead>
+            <tr class="bg-green-500 text-white">
+              <th class="border border-gray-300 px-2 py-1">Dia</th>
+              <th class="border border-gray-300 px-2 py-1">Entrada</th>
+              <th class="border border-gray-300 px-2 py-1">Saída</th>
+              <th class="border border-gray-300 px-2 py-1">Entrada</th>
+              <th class="border border-gray-300 px-2 py-1">Saída</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-300 px-2 py-1">Segunda-feira</td>
+              <td><input type="time" name="segundaEntrada1" class="border rounded-md p-1"></td>
+              <td><input type="time" name="segundaSaida1" class="border rounded-md p-1"></td>
+              <td><input type="time" name="segundaEntrada2" class="border rounded-md p-1"></td>
+              <td><input type="time" name="segundaSaida2" class="border rounded-md p-1"></td>
+            </tr>
+            <!-- Repita para os outros dias da semana -->
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <label for="data" class="block text-sm font-bold text-gray-700">Data:</label>
+        <input type="date" id="data" name="data" class="w-full border rounded-md p-2" required>
+      </div>
+
+      <div class="flex justify-end space-x-4">
+        <button type="reset" class="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600">Cancelar</button>
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Salvar</button>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>

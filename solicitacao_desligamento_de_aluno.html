@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Título Aqui</title>
+    <link rel="stylesheet" href="css/stylesheet_form_desligamento.css">
+  </head>
+<body>
+
+<div class="image-container">
+  <img src="img/logo.png" style="width: 200px; height: auto;">
+</div>
+
+<h2>Solicitação de Desligamento de Aluno</h2>
+<p>Ao Coordenador da Formação Continuada<br>
+Att. Secretaria da Escola</p>
+<p>Após verificar e ter certeza que os alunos listados abaixo não foram transferidos para outras turmas, solicito o desligamento dos mesmos, tendo em vista que não estão frequentando as aulas, e ultrapassaram o limite de 25% da carga horária prevista no curso.</p>
+
+<div class="container">
+    <div class="overflow-x-auto">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome do Aluno</th>
+                    <th>Data da Desistência</th>
+                    <th>Data da Última Frequência</th>
+                    <th>Carga Horária Cursada</th>
+                    <th>Curso</th>
+                    <th>Código da Turma</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaAlunos">
+                <!-- Dados dos alunos serão carregados aqui -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="dataAtual"></div>
+
+<div class="footer">
+  <div>
+      Nome do docente: <span id="nomeDocente"></span>
+  </div>
+  <div>
+      Orientador de Práticas Profissionais <span></span>
+  </div>
+  <div>
+      Responsável pela baixa (Secretaria) <span></span>
+  </div>
+</div>
+
+<div class="text-left">
+  FR – 1.01 – 207 – v 09 (21/05/2019)
+</div>
+
+<button id="pdfButton" onclick="salvarOuImprimirPDF()">
+    Salvar/Imprimir em PDF
+  </button>
+
+  <script src="js/script_ficha_desligamento.js"></script>
+</body>
+</html>
